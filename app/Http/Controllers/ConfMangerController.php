@@ -27,6 +27,9 @@ class ConfMangerController extends Controller
         $this->zkClient = app('zkClient');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $serversChildren = $this->zkClient->getChildren(self::CONFIG_SERVER_PATH);
