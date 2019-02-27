@@ -22,3 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/zookeeper/test', 'ZooKeeperController@test');
 Route::get('/conf-center/index.html', 'ConfMangerController@index');
 Route::post('/conf-center/publish', 'ConfMangerController@publish');
+Route::get('/code-deploy/index.html', 'CodeDeployController@index');
+Route::post('/code-deploy/publish', 'CodeDeployController@publish');

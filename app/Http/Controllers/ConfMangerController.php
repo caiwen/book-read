@@ -32,6 +32,7 @@ class ConfMangerController extends Controller
         $serversChildren = $this->zkClient->getChildren(self::CONFIG_SERVER_PATH);
         $configs = $this->zkClient->get(self::CONFIG_PATH);
         return view('conf-manger.index',[
+            'siteTitle'=>'配置中心demo',
             'activeServerList' => $serversChildren,
             'curConfigs' => !empty($configs) ? json_decode($configs,true) : []
         ]);
@@ -39,6 +40,8 @@ class ConfMangerController extends Controller
 
     /**
      * 发布配置
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function publish(Request $request)
     {
