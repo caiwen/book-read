@@ -1,10 +1,10 @@
 Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent { docker 'python:3.5.1' }
+    agent { docker 'php' }
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
+                sh 'php --version'
             }
         }
     }
